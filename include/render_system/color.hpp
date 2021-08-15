@@ -2,7 +2,9 @@
 
 #include <SDL2/SDL.h>
 
-struct color {
+namespace fard { struct color; }
+
+struct fard::color {
   Uint8 r = 0,
     g = 0,
     b = 0,

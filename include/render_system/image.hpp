@@ -3,7 +3,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-struct image {
+namespace fard { struct image; }
+
+struct fard::image {
   SDL_Texture* texture;
   SDL_Rect* des = nullptr,
     * src = nullptr;
