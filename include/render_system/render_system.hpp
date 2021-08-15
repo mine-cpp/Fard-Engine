@@ -32,8 +32,8 @@ public:
 
   static void init(
 		   const fard::color clear_color = { },
-		   const char* title = "window", const int x = SDL_WINDOWPOS_CENTERED, const int y = SDL_WINDOWPOS_CENTERED, const int w = 690, const int h = 690, const Uint32 w_flags = SDL_WINDOW_SHOWN,
-		   const int index = -1, const Uint32 r_flags = SDL_RENDERER_ACCELERATED
+		   const char* title = "window", const int x = SDL_WINDOWPOS_CENTERED, const int y = SDL_WINDOWPOS_CENTERED, const int w = 690, const int h = 690, const fard::uint32 w_flags = SDL_WINDOW_SHOWN,
+		   const int index = -1, const fard::uint32 r_flags = SDL_RENDERER_ACCELERATED
 		   );
   static void work();
   static void quit();
