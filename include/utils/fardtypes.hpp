@@ -3,6 +3,9 @@
 #include <cstdint>
 #include <SDL2/SDL.h>
 
+#define __FARD_STRUCT__(fard_struct) namespace fard { struct fard_struct; }
+#define __FARD_CLASS__(fard_class)   namespace fard { class fard_class; }
+
 namespace fard {
 
   using int8   = std::int8_t;

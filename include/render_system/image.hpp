@@ -2,7 +2,7 @@
 
 #include <utils/fardtypes.hpp>
 
-namespace fard { struct image; }
+__FARD_STRUCT__(image)
 
 struct fard::image {
   fard::texture texture;

@@ -2,7 +2,7 @@
 
 #include <utils/fardtypes.hpp>
 
-namespace fard { struct color; }
+__FARD_STRUCT__(color)
 
 struct fard::color {
   fard::uint8 r = 0,

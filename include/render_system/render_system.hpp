@@ -7,7 +7,7 @@
 #include <render_system/color.hpp>
 #include <render_system/image.hpp>
 
-namespace fard { class render_system; }
+__FARD_CLASS__(render_system)
 
 class fard::render_system {
 private:
