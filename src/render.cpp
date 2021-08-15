@@ -16,8 +16,8 @@ void fard::render_system::render(const fard::image& img) {
 
 void fard::render_system::init(
 			       const fard::color clear_color,
-			       const char* title, const int x, const int y, const int w, const int h, const Uint32 w_flags,
-			       const int index, const Uint32 r_flags
+			       const char* title, const int x, const int y, const int w, const int h, const fard::uint32 w_flags,
+			       const int index, const fard::uint32 r_flags
 			       ) {
   clear_color__ = clear_color;
   window__ = SDL_CreateWindow(title, x, y, w, h, w_flags);

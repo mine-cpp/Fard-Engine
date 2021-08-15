@@ -3,28 +3,22 @@
 #include <queue>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <utils/fardtypes.hpp>
 #include <render_system/color.hpp>
 #include <render_system/image.hpp>
 
-namespace fard {
-
-  using window_t       = SDL_Window*;
-  using renderer_t     = SDL_Renderer*;
-  using render_queue_t = std::queue<image>;
-
-  class render_system;
-
-}
+namespace fard { class render_system; }
 
 class fard::render_system {
 private:
   render_system() { }
   ~render_system() { }
 
+  using render_queue_t = std::queue<image>;
   static fard::window_t       window__;
   static fard::renderer_t     renderer__;
   static fard::color          clear_color__;
-  static fard::render_queue_t render_queue__;
+  static render_queue_t       render_queue__;
 
   static void clear();
   static void render(const fard::image& img);
@@ -33,7 +27,7 @@ private:
 public:
   static fard::color clear_color() { return clear_color__; }
 
-  static SDL_Texture* load_img(const char* path) { return IMG_LoadTexture(renderer__, path); }
+  static SDL_Texture* load_texture(const char* path) { return IMG_LoadTexture(renderer__, path); }
   static void add_to_queue(const fard::image img) { render_queue__.push(img); }
 
   static void init(
@@ -48,9 +42,9 @@ public:
 
 #ifdef __FARD_INTERN__
 
-fard::window_t       fard::render_system::window__;
-fard::renderer_t     fard::render_system::renderer__;
-fard::color          fard::render_system::clear_color__;
-fard::render_queue_t fard::render_system::render_queue__ { };
+fard::window_t                      fard::render_system::window__;
+fard::renderer_t                    fard::render_system::renderer__;
+fard::color                         fard::render_system::clear_color__;
+fard::render_system::render_queue_t fard::render_system::render_queue__ { };
 
 #endif

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <SDL2/SDL.h>
 
 namespace fard {
 
@@ -12,5 +13,13 @@ namespace fard {
   using uint16 = std::uint16_t;
   using uint32 = std::uint32_t;
   using uint64 = std::uint64_t;
+
+  using window_t       = SDL_Window*;
+  using renderer_t     = SDL_Renderer*;
+
+  using texture = SDL_Texture*;
+  using rect    = SDL_Rect*;
+  using point   = SDL_Point*;
+  using flip    = SDL_RendererFlip;
 
 }
