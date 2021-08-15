@@ -15,6 +15,7 @@ private:
   ~render_system() { }
 
   using render_queue_t = std::queue<image>;
+
   static fard::window_t       window__;
   static fard::renderer_t     renderer__;
   static fard::color          clear_color__;
