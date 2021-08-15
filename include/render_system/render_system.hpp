@@ -28,7 +28,7 @@ private:
 public:
   static fard::color clear_color() { return clear_color__; }
 
-  static SDL_Texture* load_texture(const char* path) { return IMG_LoadTexture(renderer__, path); }
+  static fard::texture load_texture(const char* path) { return IMG_LoadTexture(renderer__, path); }
   static void add_to_queue(const fard::image img) { render_queue__.push(img); }
 
   static void init(
