@@ -2,9 +2,9 @@
 
 #include <utils/fardtypes.hpp>
 
-__FARD_STRUCT__(image)
+__FARD_STRUCT__(Image)
 
-struct fard::image {
+struct fard::Image {
   fard::texture texture;
   fard::rect des = nullptr,
     src = nullptr;
