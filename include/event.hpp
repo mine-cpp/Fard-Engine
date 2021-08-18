@@ -1,39 +1,44 @@
 #pragma once
 
 #include <SDL2/SDL.h>
+#include <utils/fardtypes.hpp>
 
-class event_system {
+__FARD_CLASS__(Event_handler)
+
+class fard::Event_handler {
+public:
+  struct Mouse {
+    int x, y;
+    uint32 buttons;
+  };
+
 private:
-  event_system() { }
-  ~event_system() { }
+  Event_handler() { }
+  ~Event_handler() { }
 
-  static bool running__;
-  static bool pause__;
-  static SDL_Event event__;
-  static Uint8* keys__;
-  static int mouse_x__;
-  static int mouse_y__;
-  static Uint32 buttons__;
+  bool running__;
+  bool paused__;
+  SDL_Event event__;
+  uint8* keys__;
+  Mouse mouse__;
 
 public:
-  static bool running() { return running__; }
-  static bool pause() { return pause__; }
-  static SDL_Event event() { return event__; }
-  static const Uint8* keys() { return keys__; }
-  static int mouse_x() { return mouse_x__; }
-  static int mouse_y() { return mouse_y__; }
-  static Uint32 buttons() { return buttons__; }
+  bool is_running() const { return running__; }
+  bool is_paused() const { return paused__; }
+  const uint8* keys() const { return keys__; }
+  Mouse mouse() const { return mouse__; }
 
-  static bool key(const SDL_Scancode k) { return keys__[k]; }
+  bool key_pressed(const keycode_t keycode) { return keys__[keycode]; }
+  bool key_not_pressed(const keycode_t keycode) { return !(keys__[keycode]); }
 
-  static void work() {
+  static void handle() {
 
     while (SDL_PollEvent(&event__)) {
 
     }
 
-    keys__ = const_cast<Uint8*>(SDL_GetKeyboardState(nullptr));
-    buttons__ = SDL_GetMouseState(&mouse_x__, &mouse_y__);
+    keys__ = const_cast<uint8*>(SDL_GetKeyboardState(nullptr));
+    mouse__.buttons = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
 
   }
 
