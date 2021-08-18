@@ -1,6 +1,8 @@
 #include <window.hpp>
 
-fard::Window::Window(const Properties properties) {
+fard::Window::Window(const Properties properties) :
+  window__(nullptr), renderer__(nullptr)
+{
   window__ = SDL_CreateWindow(
 			      properties.title.data(),
 			      properties.x, properties.y,
@@ -14,7 +16,7 @@ fard::Window::Window(const Properties properties) {
 				  );
 }
 
-fard::Window::~Window() {
+fard::Window::~Window()  {
   SDL_DestroyWindow(window__);
   SDL_DestroyRenderer(renderer__);
 }
