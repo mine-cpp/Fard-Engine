@@ -5,9 +5,10 @@ main
 main.exe
 
 # Emacs auto-save files
-.#*.*
-*/#*.*
-*/*/#*.*
+*#*#
+*#*
+*#*.*#
+*#*.*
 
 # tbh, idk :/
 *.*~
