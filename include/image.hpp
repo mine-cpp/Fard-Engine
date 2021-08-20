@@ -5,10 +5,10 @@
 __FARD_STRUCT__(Image)
 
 struct fard::Image {
-  fard::texture texture;
-  fard::rect des = nullptr,
+  fard::texture_t texture;
+  fard::rect_t des = nullptr,
     src = nullptr;
   double angle = 0.0;
-  fard::point center = nullptr;
-  fard::flip flip = SDL_FLIP_NONE;
+  fard::point_t center = nullptr;
+  fard::flip_t flip = SDL_FLIP_NONE;
 };

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <utils/fardtypes.hpp>
 #include <image.hpp>
 
@@ -10,12 +8,12 @@ __FARD_CLASS__(Window)
 class fard::Window {
 public:
   struct Flags {
-    fard::uint32 window = SDL_WINDOW_SHOWN,
+    fard::uint32_t window = SDL_WINDOW_SHOWN,
       renderer = SDL_RENDERER_ACCELERATED;
   };
 
   struct Properties {
-    fard::string title = "Window";
+    fard::string_t title = "Window";
     int x = SDL_WINDOWPOS_CENTERED,
       y = SDL_WINDOWPOS_CENTERED,
       w = 690,
@@ -25,26 +23,31 @@ public:
   };
 
   struct Color {
-    uint8 r = 0,
+    uint8_t r = 0,
       g = 0,
       b = 0,
       a = 255;
   };
 
-private:
-  window_t   window__;
-  renderer_t renderer__;
 
-public:
+
   Window(const Properties properties);
   ~Window();
 
-  Color clear_color;
+  void change_clear_color(const Color new_color);
 
-  window_t window() const;
-  renderer_t renderer() const;
-
-  void clear_screen() const;
-  void render(const Image& image) const;
+  void clear() const;
+  void draw(const Image& image) const;
   void update() const;
+
+  friend texture_t load_texture(const Window window, const char* path);
+
+private:
+  window_t create_window(const Properties properties) const;
+  renderer_t create_renderer(const Properties properties) const;
+
+  window_t window__;
+  renderer_t renderer__;
+  Color clear_color__;
+
 };
