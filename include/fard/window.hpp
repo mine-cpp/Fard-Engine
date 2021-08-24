@@ -1,7 +1,7 @@
 #pragma once
 
-#include <utils/fardtypes.hpp>
-#include <image.hpp>
+#include <fard/utils/types.hpp>
+#include <fard/image.hpp>
 
 __FARD_CLASS__(Window)
 

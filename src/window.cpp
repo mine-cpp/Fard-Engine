@@ -1,7 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-
-#include <window.hpp>
+#include <fard/window.hpp>
 
 namespace fard {
 

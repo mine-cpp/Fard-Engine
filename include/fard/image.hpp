@@ -1,6 +1,6 @@
 #pragma once
 
-#include <utils/fardtypes.hpp>
+#include <fard/utils/types.hpp>
 
 __FARD_STRUCT__(Image)
 

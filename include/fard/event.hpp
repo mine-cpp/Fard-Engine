@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <utils/fardtypes.hpp>
+#include <fard/utils/types.hpp>
 
 __FARD_CLASS__(Event_handler)
 
