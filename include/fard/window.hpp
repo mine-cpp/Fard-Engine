@@ -8,12 +8,12 @@ __FARD_CLASS__(Window)
 class fard::Window {
 public:
   struct Flags {
-    fard::uint32_t window = SDL_WINDOW_SHOWN,
+    uint32_t window = SDL_WINDOW_SHOWN,
       renderer = SDL_RENDERER_ACCELERATED;
   };
 
   struct Properties {
-    fard::string_t title = "Window";
+    string_t title = "Window";
     int x = SDL_WINDOWPOS_CENTERED,
       y = SDL_WINDOWPOS_CENTERED,
       w = 690,
