@@ -18,8 +18,8 @@ private:
 
   bool running__;
   bool paused__;
-  SDL_Event event__;
-  uint8* keys__;
+  event_t event__;
+  key_array_t keys__;
   Mouse mouse__;
 
 public:
