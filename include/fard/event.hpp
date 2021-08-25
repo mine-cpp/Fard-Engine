@@ -3,9 +3,9 @@
 #include <SDL2/SDL.h>
 #include <fard/utils/types.hpp>
 
-__FARD_CLASS__(Event_handler)
+__FARD_CLASS__(EventHandler)
 
-class fard::Event_handler {
+class fard::EventHandler {
 public:
   struct Mouse {
     int x, y;
@@ -13,8 +13,8 @@ public:
   };
 
 private:
-  Event_handler() { }
-  ~Event_handler() { }
+  EventHandler() { }
+  ~EventHandler() { }
 
   bool running__;
   bool paused__;
