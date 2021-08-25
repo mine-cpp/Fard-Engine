@@ -71,8 +71,8 @@ namespace fard {
 
 
 
-  texture_t load_texture(const Window window, const char* path) {
-    return IMG_LoadTexture(window.renderer__, path);
+  texture_t Window::load_texture(const string_t path) {
+    return IMG_LoadTexture(renderer__, path.data());
   }
 
 }

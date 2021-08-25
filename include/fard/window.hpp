@@ -40,11 +40,11 @@ public:
   void draw(const Image& image) const;
   void update() const;
 
-  friend texture_t load_texture(const Window window, const char* path);
+  texture_t load_texture(const string_t path);
 
 private:
-  window_t create_window(const Properties properties) const;
-  renderer_t create_renderer(const Properties properties) const;
+  window_t create_SDL_window(const Properties properties) const;
+  renderer_t create_SDL_renderer(const Properties properties) const;
 
   window_t window__;
   renderer_t renderer__;
