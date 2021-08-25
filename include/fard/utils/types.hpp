@@ -28,6 +28,8 @@ namespace fard {
   using point_t = SDL_Point*;
   using flip_t = SDL_RendererFlip;
 
+  using key_array_t = uint8_t*;
   using keycode_t = SDL_Scancode;
+  using event_t = SDL_Event;
 
 }
