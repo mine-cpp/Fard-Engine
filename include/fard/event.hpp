@@ -1,6 +1,5 @@
 #pragma once
 
-#include <SDL2/SDL.h>
 #include <fard/utils/types.hpp>
 
 __FARD_CLASS__(event_handler)
@@ -12,26 +11,17 @@ public:
     button_bitset_t on_buttons;
   };
 
-  bool is_running() const { return running__; }
-  bool is_paused() const { return paused__; }
+  bool is_running() const;
+  bool is_paused() const;
 
-  bool key_on(const keycode_t keycode) { return on_keys__[keycode]; }
-  bool key_off(const keycode_t keycode) { return !(on_keys__[keycode]); }
+  bool key_on(const keycode_t __keycode)
+  bool key_off(const keycode_t __keycode)
 
-  int mouse_x() const { return mouse__.x; }
-  int mouse_y() const { return mouse__.y; }
-  bool buttons_on(const uint32 buttons) const { return (mouse__.on_buttons & buttons); }
+  int mouse_x() const;
+  int mouse_y() const;
+  bool buttons_on(const button_bitset_t __buttons) const;
 
-  void handle() {
-
-    while (SDL_PollEvent(&event__)) {
-
-    }
-
-    on_keys__ = const_cast<key_array_t>(SDL_GetKeyboardState(nullptr));
-    mouse__.on_buttons = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
-
-  }
+  void handle();
 
 private:
   bool running__;
