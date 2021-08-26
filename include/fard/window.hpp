@@ -3,16 +3,16 @@
 #include <fard/utils/types.hpp>
 #include <fard/image.hpp>
 
-__FARD_CLASS__(Window)
+__FARD_CLASS__(window)
 
-class fard::Window {
+class fard::window {
 public:
-  struct Flags {
+  struct flags {
     uint32_t window = SDL_WINDOW_SHOWN,
       renderer = SDL_RENDERER_ACCELERATED;
   };
 
-  struct Properties {
+  struct properties {
     string_t title = "Window";
     int x = SDL_WINDOWPOS_CENTERED,
       y = SDL_WINDOWPOS_CENTERED,
@@ -22,7 +22,7 @@ public:
     Flags flags = { };
   };
 
-  struct Color {
+  struct color {
     uint8_t r = 0,
       g = 0,
       b = 0,
@@ -31,23 +31,23 @@ public:
 
 
 
-  Window(const Properties properties);
+  Window(const properties __properties);
   ~Window();
 
-  void change_clear_color(const Color new_color);
+  void change_clear_color(const color __new_color);
 
   void clear() const;
-  void draw(const Image& image) const;
+  void draw(const image& __img) const;
   void update() const;
 
-  texture_t load_texture(const string_t path);
+  texture_t load_texture(const string_t __path);
 
 private:
-  window_t create_window(const Properties properties) const;
-  renderer_t create_renderer(const Properties properties) const;
+  window_t create_window(const properties __properties) const;
+  renderer_t create_renderer(const properties __properties) const;
 
   window_t window__;
   renderer_t renderer__;
-  Color clear_color__;
+  color clear_color__;
 
 };

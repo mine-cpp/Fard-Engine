@@ -4,32 +4,32 @@
 
 namespace fard {
 
-  Window::Window(const Properties properties) :
+  window::window(const properties __properties) :
     window__(nullptr), renderer__(nullptr)
   {
-    window__ = create_window(properties);
+    window__ = create_window(__properties);
     if (!window__)
       throw "Could not create window";
 
-    renderer__ = create_renderer(properties);
+    renderer__ = create_renderer(__properties);
     if (!renderer__)
       throw "Could not create renderer";
   }
 
-  Window::~Window()  {
-    SDL_DestroyWindow(window__);
+  window::~window()  {
+    SDL_Destroywindow(window__);
     SDL_DestroyRenderer(renderer__);
   }
 
 
 
-  void Window::change_clear_color(const Window::Color new_color) {
-    clear_color__ = new_color;
+  void window::change_clear_color(const color __new_color) {
+    clear_color__ = __new_color;
   }
 
 
 
-  void Window::clear() const {
+  void window::clear() const {
     SDL_SetRenderDrawColor(
 			   renderer__,
 			   clear_color__.r,
@@ -40,39 +40,39 @@ namespace fard {
     SDL_RenderClear(renderer__);  
   }
 
-  void Window::draw(const Image& image) const {
+  void window::draw(const image& __img) const {
     SDL_RenderCopyEx(
 		     renderer__,
-		     image.texture, image.src, image.des,
-		     image.angle, image.center, image.flip
+		     __img.texture, __image.src, __image.des,
+		     __img.angle, __image.center, __image.flip
 		     );
   }
 
-  void Window::update() const {
+  void window::update() const {
     SDL_RenderPresent(renderer__);
   }
 
-  window_t Window::create_window(const Window::Properties properties) const {
-    return SDL_CreateWindow(
-			    properties.title.data(),
-			    properties.x, properties.y,
-			    properties.w, properties.h,
-			    properties.flags.window
+  window_t window::create_window(const properties __properties) const {
+    return SDL_Createwindow(
+			    __properties.title.c_str(),
+			    __properties.x, __properties.y,
+			    __properties.w, __properties.h,
+			    __properties.flags.window
 			    );
   }
 
-  renderer_t Window::create_renderer(const Window::Properties properties) const {
+  renderer_t window::create_renderer(const properties __properties) const {
     return SDL_CreateRenderer(
 			      window__,
-			      properties.index,
-			      properties.flags.renderer
+			      __properties.index,
+			      __properties.flags.renderer
 			      );
   }
 
 
 
-  texture_t Window::load_texture(const string_t path) {
-    return IMG_LoadTexture(renderer__, path.data());
+  texture_t window::load_texture(const string_t __path) {
+    return IMG_LoadTexture(renderer__, __path.c_str());
   }
 
 }
