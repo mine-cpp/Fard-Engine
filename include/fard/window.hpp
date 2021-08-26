@@ -7,6 +7,13 @@ __FARD_CLASS__(window)
 
 class fard::window {
 public:
+  struct transform {
+    int x = SDL_WINDOWPOS_CENTERED,
+      y = SDL_WINDOWPOS_CENTERED,
+      w = 690,
+      h = 690;
+  };
+
   struct flags {
     uint32_t window = SDL_WINDOW_SHOWN,
       renderer = SDL_RENDERER_ACCELERATED;
@@ -14,12 +21,9 @@ public:
 
   struct properties {
     string_t title = "Window";
-    int x = SDL_WINDOWPOS_CENTERED,
-      y = SDL_WINDOWPOS_CENTERED,
-      w = 690,
-      h = 690,
-      index = -1;
-    Flags flags = { };
+    window::transform transform = { };
+    int index = -1;
+    window::flags flags = { };
   };
 
   struct color {
@@ -31,8 +35,8 @@ public:
 
 
 
-  Window(const properties __properties);
-  ~Window();
+  window(const properties __properties);
+  ~window();
 
   void change_clear_color(const color __new_color);
 

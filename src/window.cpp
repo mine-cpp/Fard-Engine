@@ -17,7 +17,7 @@ namespace fard {
   }
 
   window::~window()  {
-    SDL_Destroywindow(window__);
+    SDL_DestroyWindow(window__);
     SDL_DestroyRenderer(renderer__);
   }
 
@@ -43,8 +43,8 @@ namespace fard {
   void window::draw(const image& __img) const {
     SDL_RenderCopyEx(
 		     renderer__,
-		     __img.texture, __image.src, __image.des,
-		     __img.angle, __image.center, __image.flip
+		     __img.texture, __img.src, __img.des,
+		     __img.angle, __img.center, __img.flip
 		     );
   }
 
@@ -53,10 +53,10 @@ namespace fard {
   }
 
   window_t window::create_window(const properties __properties) const {
-    return SDL_Createwindow(
+    return SDL_CreateWindow(
 			    __properties.title.c_str(),
-			    __properties.x, __properties.y,
-			    __properties.w, __properties.h,
+			    __properties.transform.x, __properties.transform.y,
+			    __properties.transform.w, __properties.transform.h,
 			    __properties.flags.window
 			    );
   }

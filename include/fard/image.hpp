@@ -2,13 +2,13 @@
 
 #include <fard/utils/types.hpp>
 
-__FARD_STRUCT__(Image)
+__FARD_STRUCT__(image)
 
-struct fard::Image {
-  fard::texture_t texture;
-  fard::rect_t des = nullptr,
+struct fard::image {
+  texture_t texture;
+  rect_t des = nullptr,
     src = nullptr;
   double angle = 0.0;
-  fard::point_t center = nullptr;
-  fard::flip_t flip = SDL_FLIP_NONE;
+  point_t center = nullptr;
+  flip_t flip = SDL_FLIP_NONE;
 };

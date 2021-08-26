@@ -3,34 +3,23 @@
 #include <SDL2/SDL.h>
 #include <fard/utils/types.hpp>
 
-__FARD_CLASS__(EventHandler)
+__FARD_CLASS__(event_handler)
 
-class fard::EventHandler {
+class fard::event_handler {
 public:
-  struct Mouse {
+  struct mouse {
     int x, y;
-    uint32 on_buttons;
+    button_bitset_t on_buttons;
   };
 
-private:
-  EventHandler() { }
-  ~EventHandler() { }
-
-  bool running__;
-  bool paused__;
-  event_t event__;
-  key_array_t on_keys__;
-  Mouse mouse__;
-
-public:
   bool is_running() const { return running__; }
   bool is_paused() const { return paused__; }
 
   bool key_on(const keycode_t keycode) { return on_keys__[keycode]; }
   bool key_off(const keycode_t keycode) { return !(on_keys__[keycode]); }
 
-  int mouse_x() const { return mouse.x; }
-  int mouse_y() const { return mouse.y; }
+  int mouse_x() const { return mouse__.x; }
+  int mouse_y() const { return mouse__.y; }
   bool buttons_on(const uint32 buttons) const { return (mouse__.on_buttons & buttons); }
 
   void handle() {
@@ -43,5 +32,12 @@ public:
     mouse__.on_buttons = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
 
   }
+
+private:
+  bool running__;
+  bool paused__;
+  event_t event__;
+  key_array_t on_keys__;
+  mouse mouse__;
 
 };
