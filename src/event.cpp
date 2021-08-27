@@ -13,7 +13,7 @@ namespace fard {
   int event_checker::mouse_y() const {
     return mouse__.y;
   }
-  bool event_checker::on_button(const button_bitset_t __button) const {
+  bool event_checker::on_button(const buttoncode __button) const {
     return (mouse__.on_buttons & __button);
   }
 

@@ -17,6 +17,12 @@ enum class fard::keycode {
   // add keys
 };
 
+__FARD_ENUM_CLASS__(button)
+enum class fard::buttoncode {
+  // TODO
+  // add mouse buttons
+};
+
 
 
 __FARD_CLASS__(event_checker)
@@ -27,7 +33,7 @@ public:
 
   int mouse_x() const;
   int mouse_y() const;
-  bool on_button(const button_bitset_t __button) const;
+  bool on_button(const buttoncode __button) const;
 
   bool on(const event_type __event) const;
 
