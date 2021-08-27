@@ -15,7 +15,6 @@ public:
   bool is_paused() const;
 
   bool key_on(const keycode_t __key);
-  bool key_off(const keycode_t __key);
 
   int mouse_x() const;
   int mouse_y() const;

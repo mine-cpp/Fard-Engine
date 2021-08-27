@@ -13,9 +13,6 @@ namespace fard {
   bool event_handler::key_on(const keycode_t __key) {
     return on_keys__[__key];
   }
-  bool event_handler::key_off(const keycode_t __key) {
-    return !(on_keys__[__key]);
-  }
 
   int event_handler::mouse_x() const {
     return mouse__.x;
