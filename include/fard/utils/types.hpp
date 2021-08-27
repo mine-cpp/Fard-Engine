@@ -4,8 +4,9 @@
 #include <cstdint>
 #include <SDL2/SDL.h>
 
-#define __FARD_STRUCT__(fard_Struct) namespace fard { struct fard_Struct; }
-#define __FARD_CLASS__(fard_Class) namespace fard { class fard_Class; }
+#define __FARD_STRUCT__(fard_struct) namespace fard { struct fard_struct; }
+#define __FARD_CLASS__(fard_class) namespace fard { class fard_class; }
+#define __FARD_ENUM_CLASS__(fard_enum) namespace fard { enum class fard_enum; }
 
 namespace fard {
 
