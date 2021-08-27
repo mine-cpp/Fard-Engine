@@ -4,7 +4,6 @@
 #include <fard/image.hpp>
 
 __FARD_CLASS__(window)
-
 class fard::window {
 public:
   struct transform {
@@ -44,14 +43,14 @@ public:
   void draw(const image& __img) const;
   void update() const;
 
-  texture_t load_texture(const string_t __path);
+  texture_t* load_texture(const string_t __path);
 
 private:
-  window_t create_window(const properties __properties) const;
-  renderer_t create_renderer(const properties __properties) const;
+  window_t* create_window(const properties __properties) const;
+  renderer_t* create_renderer(const properties __properties) const;
 
-  window_t window__;
-  renderer_t renderer__;
+  window_t* window__;
+  renderer_t* renderer__;
   color clear_color__;
 
 };

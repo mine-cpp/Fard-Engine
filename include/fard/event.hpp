@@ -3,13 +3,15 @@
 #include <set>
 #include <fard/utils/types.hpp>
 
-namespace fard { enum class event_type; };
+__FARD_ENUM_CLASS__(event_type)
 enum class fard::event_type {
     none = 0,
     window_closed,
     key_pressed, key_released,
     button_pressed, button_released
 };
+
+
 
 __FARD_CLASS__(event_checker)
 class fard::event_checker {
@@ -31,7 +33,7 @@ private:
     button_bitset_t on_buttons;
   };
 
-  key_array_t on_keys__;
+  key_t* on_keys__;
   mouse mouse__;
   std::set<event_type> on_events__;
 

@@ -45,13 +45,13 @@ namespace fard {
     SDL_RenderPresent(renderer__);
   }
 
-  texture_t window::load_texture(const string_t __path) {
+  texture_t* window::load_texture(const string_t __path) {
     return IMG_LoadTexture(renderer__, __path.c_str());
   }
 
 
 
-  window_t window::create_window(const properties __properties) const {
+  window_t* window::create_window(const properties __properties) const {
     return SDL_CreateWindow(
 			    __properties.title.c_str(),
 			    __properties.transform.x, __properties.transform.y,
@@ -59,7 +59,7 @@ namespace fard {
 			    __properties.flags.window
 			    );
   }
-  renderer_t window::create_renderer(const properties __properties) const {
+  renderer_t* window::create_renderer(const properties __properties) const {
     return SDL_CreateRenderer(
 			      window__,
 			      __properties.index,

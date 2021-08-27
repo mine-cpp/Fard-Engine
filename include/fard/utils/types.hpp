@@ -21,15 +21,15 @@ namespace fard {
   using uint32_t = std::uint32_t;
   using uint64_t = std::uint64_t;
 
-  using window_t = SDL_Window*;
-  using renderer_t = SDL_Renderer*;
+  using window_t = SDL_Window;
+  using renderer_t = SDL_Renderer;
 
-  using texture_t = SDL_Texture*;
-  using rect_t = SDL_Rect*;
-  using point_t = SDL_Point*;
+  using texture_t = SDL_Texture;
+  using rect_t = SDL_Rect;
+  using point_t = SDL_Point;
   using flip_t = SDL_RendererFlip;
 
-  using key_array_t = uint8_t*;
+  using key_t = uint8_t;
   using keycode_t = SDL_Scancode;
   using button_bitset_t = uint32_t;
   using event_t = SDL_Event;
