@@ -14,11 +14,11 @@ public:
   bool is_running() const;
   bool is_paused() const;
 
-  bool key_on(const keycode_t __key);
+  bool on_key(const keycode_t __key);
 
   int mouse_x() const;
   int mouse_y() const;
-  bool buttons_on(const button_bitset_t __buttons) const;
+  bool on_button(const button_bitset_t __button) const;
 
   void handle();
 

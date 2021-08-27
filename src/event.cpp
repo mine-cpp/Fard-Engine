@@ -20,8 +20,8 @@ namespace fard {
   int event_handler::mouse_y() const {
     return mouse__.y;
   }
-  bool event_handler::buttons_on(const button_bitset_t __buttons) const {
-    return (mouse__.on_buttons & __buttons);
+  bool event_handler::button_on(const button_bitset_t __button) const {
+    return (mouse__.on_buttons & __button);
   }
 
   void event_handler::handle() {
