@@ -1,14 +1,17 @@
 #pragma once
 
 #include <set>
+#include <SDL2/SDL.h>
 #include <fard/utils/types.hpp>
 
 __FARD_ENUM_CLASS__(event_type)
 enum class fard::event_type {
-    none = 0,
-    window_closed,
-    key_pressed, key_released,
-    button_pressed, button_released
+  none = 0,
+    window_closed = SDL_QUIT,
+    key_pressed = SDL_KEYDOWN,
+    key_released = SDL_KEYUP,
+    button_pressed = SDL_MOUSEBUTTONDOWN,
+    button_released = SDL_MOUSEBUTTONUP
 };
 
 __FARD_ENUM_CLASS__(key_code)
@@ -51,7 +54,7 @@ private:
 
   key_t* on_keys__;
   mouse mouse__;
-  std::set<event_type> on_events__;
+  std::set<uint32_t> on_events__;
 
   bool found_on_event(const event_type __event) const;
 

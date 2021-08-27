@@ -33,7 +33,7 @@ namespace fard {
 
 
   bool event_checker::found_on_event(const event_type __event) const {
-    auto it = on_events__.find(__event);
+    auto it = on_events__.find(static_cast<int>(__event));
     if (it != on_events__.end())
       return true;
 
@@ -56,15 +56,12 @@ namespace fard {
 
 
   void event_handler::poll() {
+    checker__.on_events__.clear();
 
-    while (SDL_PollEvent(&handler__)) {
+    while (SDL_PollEvent(&handler__))
+      checker__.on_events__.insert(handler__.type);
 
-      // TODO
-      // add event enum, so that it'll be updated
-      // in this loop
-
-    }
-
+    checker__.on_events__.insert(static_cast<int>(event_type::none));
   }
   void event_handler::handle_keyboard() {
     //on_keys__ = const_cast<key_array_t>(SDL_GetKeyboardState(nullptr));
