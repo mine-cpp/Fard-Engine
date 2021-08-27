@@ -30,7 +30,6 @@ namespace fard {
   using flip_t = SDL_RendererFlip;
 
   using key_t = uint8_t;
-  using keycode_t = SDL_Scancode;
   using button_bitset_t = uint32_t;
   using event_t = SDL_Event;
 

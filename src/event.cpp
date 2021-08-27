@@ -3,8 +3,8 @@
 
 namespace fard {
 
-  bool event_checker::on_key(const keycode_t __key) {
-    return on_keys__[__key];
+  bool event_checker::on_key(const keycode __key) {
+    return on_keys__[static_cast<int>(__key)];
   }
 
   int event_checker::mouse_x() const {
