@@ -28,6 +28,8 @@ enum class fard::button_code {
 __FARD_CLASS__(event_checker)
 class fard::event_checker {
 public:
+  event_checker();
+  ~event_checker();
 
   bool on_key(const key_code __key);
 
@@ -45,6 +47,8 @@ private:
     button_bitset_t on_buttons;
   };
 
+
+
   key_t* on_keys__;
   mouse mouse__;
   std::set<event_type> on_events__;
@@ -56,6 +60,9 @@ private:
 __FARD_CLASS__(event_handler)
 class fard::event_handler {
 public:
+  event_handler();
+  ~event_handler();
+
   void handle();
 
 private:

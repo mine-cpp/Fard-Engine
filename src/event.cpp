@@ -3,6 +3,12 @@
 
 namespace fard {
 
+  event_checker::event_checker() :
+    on_keys__(nullptr), mouse__ { },
+    on_events__ { }
+  { }
+  event_checker::~event_checker() { }
+
   bool event_checker::on_key(const key_code __key) {
     return on_keys__[static_cast<int>(__key)];
   }
@@ -35,6 +41,11 @@ namespace fard {
   }
 
 
+
+  event_handler::event_handler() :
+    handler__ { }
+  { }
+  event_handler::~event_handler() { }
 
   void event_handler::handle() {
     poll();
