@@ -15,19 +15,14 @@ namespace fard {
     if (!renderer__)
       throw "Could not create renderer";
   }
-
   window::~window()  {
     SDL_DestroyWindow(window__);
     SDL_DestroyRenderer(renderer__);
   }
 
-
-
   void window::change_clear_color(const color __new_color) {
     clear_color__ = __new_color;
   }
-
-
 
   void window::clear() const {
     SDL_SetRenderDrawColor(
@@ -39,7 +34,6 @@ namespace fard {
 			   );
     SDL_RenderClear(renderer__);  
   }
-
   void window::draw(const image& __img) const {
     SDL_RenderCopyEx(
 		     renderer__,
@@ -47,10 +41,15 @@ namespace fard {
 		     __img.angle, __img.center, __img.flip
 		     );
   }
-
   void window::update() const {
     SDL_RenderPresent(renderer__);
   }
+
+  texture_t window::load_texture(const string_t __path) {
+    return IMG_LoadTexture(renderer__, __path.c_str());
+  }
+
+
 
   window_t window::create_window(const properties __properties) const {
     return SDL_CreateWindow(
@@ -60,19 +59,12 @@ namespace fard {
 			    __properties.flags.window
 			    );
   }
-
   renderer_t window::create_renderer(const properties __properties) const {
     return SDL_CreateRenderer(
 			      window__,
 			      __properties.index,
 			      __properties.flags.renderer
 			      );
-  }
-
-
-
-  texture_t window::load_texture(const string_t __path) {
-    return IMG_LoadTexture(renderer__, __path.c_str());
   }
 
 }
