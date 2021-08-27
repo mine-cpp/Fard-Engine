@@ -64,10 +64,13 @@ namespace fard {
     checker__.on_events__.insert(static_cast<int>(event_type::none));
   }
   void event_handler::handle_keyboard() {
-    //on_keys__ = const_cast<key_array_t>(SDL_GetKeyboardState(nullptr));
+    checker__.on_keys__ = const_cast<key_t*>(SDL_GetKeyboardState(nullptr));
   }
   void event_handler::handle_mouse() {
-    //mouse__.on_buttons = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
+    checker__.mouse__.on_buttons = SDL_GetMouseState(
+						     &(checker__.mouse__.x),
+						     &(checker__.mouse__.y)
+						     );
   }
 
 }
