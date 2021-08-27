@@ -60,12 +60,13 @@ private:
 __FARD_CLASS__(event_handler)
 class fard::event_handler {
 public:
-  event_handler();
+  event_handler(event_checker& __checker);
   ~event_handler();
 
   void handle();
 
 private:
+  event_checker& checker__;
   event_t handler__;
 
   void poll();

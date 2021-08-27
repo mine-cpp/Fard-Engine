@@ -42,8 +42,8 @@ namespace fard {
 
 
 
-  event_handler::event_handler() :
-    handler__ { }
+  event_handler::event_handler(event_checker& __checker) :
+    checker__(__checker), handler__ { }
   { }
   event_handler::~event_handler() { }
 
