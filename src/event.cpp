@@ -46,8 +46,8 @@ namespace fard {
   void event_handler::handle_keyboard() {
     on_keys__ = const_cast<key_array_t>(SDL_GetKeyboardState(nullptr));
   }
-  void event_handler::handle_keyboard() {
-    mouse__ = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
+  void event_handler::handle_mouse() {
+    mouse__.on_buttons = SDL_GetMouseState(&(mouse__.x), &(mouse__.y));
   }
 
 }
