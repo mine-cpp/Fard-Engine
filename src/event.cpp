@@ -14,7 +14,7 @@ namespace fard {
     return mouse__.y;
   }
   bool event_checker::on_button(const button_code __button) const {
-    return (mouse__.on_buttons & __button);
+    return (mouse__.on_buttons & static_cast<int>(__button));
   }
 
   bool event_checker::on(const event_type __event) const {
