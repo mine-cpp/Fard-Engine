@@ -29,4 +29,8 @@ private:
   key_array_t on_keys__;
   mouse mouse__;
 
+  void poll();
+  void handle_keyboard();
+  void handle_mouse();
+
 };
