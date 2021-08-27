@@ -11,14 +11,14 @@ enum class fard::event_type {
     button_pressed, button_released
 };
 
-__FARD_ENUM_CLASS__(keycode)
-enum class fard::keycode {
+__FARD_ENUM_CLASS__(key_code)
+enum class fard::key_code {
   // TODO
   // add keys
 };
 
-__FARD_ENUM_CLASS__(button)
-enum class fard::buttoncode {
+__FARD_ENUM_CLASS__(button_code)
+enum class fard::button_code {
   // TODO
   // add mouse buttons
 };
@@ -29,11 +29,11 @@ __FARD_CLASS__(event_checker)
 class fard::event_checker {
 public:
 
-  bool on_key(const keycode __key);
+  bool on_key(const key_code __key);
 
   int mouse_x() const;
   int mouse_y() const;
-  bool on_button(const buttoncode __button) const;
+  bool on_button(const button_code __button) const;
 
   bool on(const event_type __event) const;
 
