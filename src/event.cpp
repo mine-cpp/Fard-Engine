@@ -10,7 +10,7 @@ namespace fard {
     return paused__;
   }
 
-  bool event_handler::key_on(const keycode_t __key) {
+  bool event_handler::on_key(const keycode_t __key) {
     return on_keys__[__key];
   }
 
@@ -20,7 +20,7 @@ namespace fard {
   int event_handler::mouse_y() const {
     return mouse__.y;
   }
-  bool event_handler::button_on(const button_bitset_t __button) const {
+  bool event_handler::on_button(const button_bitset_t __button) const {
     return (mouse__.on_buttons & __button);
   }
 
