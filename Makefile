@@ -21,12 +21,12 @@ $(fard): $(foreground)
 $(foreground): $(event) $(window)
 	ar rcs lib/libfard_fg.a obj/fg/*.o
 
-$(window): $(window_source)
+$(window): $(window_source) $(window_includes)
 	g++ -c src/window.cpp -o obj/fg/window.o -I include -Wall
-$(window_source): $(window_includes)
+$(window_source):
 $(window_includes):
 
-$(event): $(event_source)
+$(event): $(event_source) $(event_includes)
 	g++ -c src/event.cpp -o obj/fg/event.o -I include -Wall
-$(event_source): $(event_includes)
+$(event_source):
 $(event_includes):
