@@ -3,15 +3,17 @@
 #include <set>
 #include <fard/utils/types.hpp>
 
-__FARD_CLASS__(event_checker)
-class fard::event_checker {
-public:
-  enum class event_type {
+namespace fard { enum class event_type; };
+enum class fard::event_type {
     none = 0,
     window_closed,
     key_pressed, key_released,
     button_pressed, button_released
-  };
+};
+
+__FARD_CLASS__(event_checker)
+class fard::event_checker {
+public:
 
   bool on_key(const keycode_t __key);
 
