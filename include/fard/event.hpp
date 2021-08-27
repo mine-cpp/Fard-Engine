@@ -6,11 +6,6 @@ __FARD_CLASS__(event_handler)
 
 class fard::event_handler {
 public:
-  struct mouse {
-    int x, y;
-    button_bitset_t on_buttons;
-  };
-
   bool is_running() const;
   bool is_paused() const;
 
@@ -23,6 +18,11 @@ public:
   void handle();
 
 private:
+  struct mouse {
+    int x, y;
+    button_bitset_t on_buttons;
+  };
+
   bool running__;
   bool paused__;
   event_t event__;
