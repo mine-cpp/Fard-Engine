@@ -19,7 +19,7 @@ public:
   };
 
   struct properties {
-    string_t title = "Window";
+    string_t title = "Fard Window";
     window::transform transform = { };
     int index = -1;
     window::flags flags = { };
