@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <fard/utils/types.hpp>
+#include <fard/utils/typedefs.hpp>
 
 __FARD_ENUM_CLASS__(key_code)
 enum class fard::key_code {

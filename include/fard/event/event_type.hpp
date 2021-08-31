@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <fard/utils/types.hpp>
+#include <fard/utils/typedefs.hpp>
 
 __FARD_ENUM_CLASS__(event_type)
 enum class fard::event_type {
