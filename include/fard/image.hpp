@@ -1,6 +1,6 @@
 #pragma once
 
-#include <fard/utils/types.hpp>
+#include <fard/utils/typedefs.hpp>
 
 __FARD_STRUCT__(image)
 struct fard::image {

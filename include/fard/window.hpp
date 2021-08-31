@@ -1,6 +1,6 @@
 #pragma once
 
-#include <fard/utils/types.hpp>
+#include <fard/utils/typedefs.hpp>
 #include <fard/image.hpp>
 
 __FARD_CLASS__(window)
