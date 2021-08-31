@@ -6,9 +6,9 @@
 __FARD_ENUM_CLASS__(event_type)
 enum class fard::event_type {
   none = 0,
-    window_closed = SDL_QUIT,
-    key_pressed = SDL_KEYDOWN,
-    key_released = SDL_KEYUP,
-    button_pressed = SDL_MOUSEBUTTONDOWN,
-    button_released = SDL_MOUSEBUTTONUP
+    window_close = SDL_QUIT,
+    key_press = SDL_KEYDOWN,
+    key_release = SDL_KEYUP,
+    button_press = SDL_MOUSEBUTTONDOWN,
+    button_release = SDL_MOUSEBUTTONUP
 };
