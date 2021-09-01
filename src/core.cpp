@@ -19,12 +19,12 @@ static void init_sdl() {
     throw "ERROR: Could not initialize SDL";
 }
 static void init_img() {
-  bool initted = (IMG_Init(img_flags) & img_flags);
+  bool initted = ((IMG_Init(img_flags) & img_flags) == img_flags);
   if (!initted)
     throw "ERROR: Could not initialize SDL_image";
 }
 static void init_mix() {
-  bool initted = (Mix_Init(mix_flags) & mix_flags);
+  bool initted = ((Mix_Init(mix_flags) & mix_flags) == mix_flags);
   if (!initted)
     throw "ERROR: Could not initialize SDL_mixer";
 }
