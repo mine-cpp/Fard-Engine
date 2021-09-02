@@ -54,7 +54,7 @@ enum class fard::key_code {
     left_bracket = SDL_SCANCODE_LEFTBRACKET,
     right_bracket = SDL_SCANCODE_RIGHTBRACKET,
     backslash = SDL_SCANCODE_BACKSLASH,
-    nonushash = SDL_SCANCODE_NONUSHASH,
+    non_us_backslash = SDL_SCANCODE_NONUSBACKSLASH,
 
     semicolon = SDL_SCANCODE_SEMICOLON,
     apostrophe = SDL_SCANCODE_APOSTROPHE,
@@ -63,6 +63,7 @@ enum class fard::key_code {
     comma = SDL_SCANCODE_COMMA,
     period = SDL_SCANCODE_PERIOD,
     slash = SDL_SCANCODE_SLASH,
+    non_us_slash = SDL_SCANCODE_NONUSHASH,
 
     capslock = SDL_SCANCODE_CAPSLOCK,
 
@@ -78,6 +79,18 @@ enum class fard::key_code {
     f10 = SDL_SCANCODE_F10,
     f11 = SDL_SCANCODE_F11,
     f12 = SDL_SCANCODE_F12,
+    f13 = SDL_SCANCODE_F13,
+    f14 = SDL_SCANCODE_F14,
+    f15 = SDL_SCANCODE_F15,
+    f16 = SDL_SCANCODE_F16,
+    f17 = SDL_SCANCODE_F17,
+    f18 = SDL_SCANCODE_F18,
+    f19 = SDL_SCANCODE_F19,
+    f20 = SDL_SCANCODE_F20,
+    f21 = SDL_SCANCODE_F21,
+    f22 = SDL_SCANCODE_F22,
+    f23 = SDL_SCANCODE_F23,
+    f24 = SDL_SCANCODE_F24,
 
     printscreen = SDL_SCANCODE_PRINTSCREEN,
     scrolllock = SDL_SCANCODE_SCROLLLOCK,
@@ -93,7 +106,30 @@ enum class fard::key_code {
     right = SDL_SCANCODE_RIGHT,
     left = SDL_SCANCODE_LEFT,
     down = SDL_SCANCODE_DOWN,
-    up = SDL_SCANCODE_UP
+    up = SDL_SCANCODE_UP,
+
+    numlock = SDL_SCANCODE_NUMLOCKCLEAR,
+    clear = SDL_SCANCODE_NUMLOCKCLEAR,
+
+    kp_divide = SDL_SCANCODE_KP_DIVIDE,
+    kp_multiply = SDL_SCANCODE_KP_MULTIPLY,
+    kp_minux = SDL_SCANCODE_KP_MINUS,
+    kp_plus = SDL_SCANCODE_KP_PLUS,
+    kp_enter = SDL_SCANCODE_KP_ENTER,
+    kp_equals = SDL_SCANCODE_KP_EQUALS,
+    kp_1 = SDL_SCANCODE_KP_1,
+    kp_2 = SDL_SCANCODE_KP_2,
+    kp_3 = SDL_SCANCODE_KP_3,
+    kp_4 = SDL_SCANCODE_KP_4,
+    kp_5 = SDL_SCANCODE_KP_5,
+    kp_6 = SDL_SCANCODE_KP_6,
+    kp_7 = SDL_SCANCODE_KP_7,
+    kp_8 = SDL_SCANCODE_KP_8,
+    kp_9 = SDL_SCANCODE_KP_9,
+    kp_0 = SDL_SCANCODE_KP_0,
+    kp_period = SDL_SCANCODE_KP_PERIOD,
+
+    power = SDL_SCANCODE_POWER
 
   // TODO
   // add more keys
