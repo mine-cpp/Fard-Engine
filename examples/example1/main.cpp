@@ -8,8 +8,7 @@
 int main(int argc, char* argv[]) {
   fard::init();
 
-  fard::window::properties properties = { };
-  fard::window window = fard::window(properties);
+  fard::window window = fard::window();
 
   fard::event_checker checker = fard::event_checker();
   fard::event_handler handler = fard::event_handler(checker);

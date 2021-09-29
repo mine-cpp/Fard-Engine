@@ -35,6 +35,7 @@ public:
 
 
   window(const properties __properties);
+  window();
   ~window();
 
   void change_clear_color(const color __new_color);

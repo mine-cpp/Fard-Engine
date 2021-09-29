@@ -15,6 +15,18 @@ namespace fard {
     if (!renderer__)
       throw "Could not create renderer";
   }
+  window::window() :
+    window__(nullptr), renderer__(nullptr)
+  {
+    properties p = { };
+    window__ = create_window(p);
+    if (!window__)
+      throw "Could not create window";
+
+    renderer__ = create_renderer(p);
+    if (!renderer__)
+      throw "Could not create renderer";
+  }
   window::~window()  {
     SDL_DestroyWindow(window__);
     SDL_DestroyRenderer(renderer__);
